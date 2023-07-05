@@ -1,2 +1,2 @@
 #!/bin/bash 
-rm  /tmp/bmy_first_directory/etty 
+rm  /tmp/my_first_directory/etty 
