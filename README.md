@@ -8,14 +8,18 @@ alx-system_engineering-devops
 	<b><i>Development repo for ALx system devops project</i></b><br>
 	For further information about alx africa and its projects, please refer to <a href="https://www.alxafrica.com/"><b>ALx africa</b></a>.
 </p>
+---
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-<div style="width:100%;height:0;padding-bottom:42%;position:relative;"><iframe src="https://giphy.com/embed/zXmbOaTpbY6mA" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/technoir-movie-film-cinemagraph-zXmbOaTpbY6mA">via GIPHY</a></p>
+---
 
+<p align="center">
+<img src="https://images.pling.com/img/00/00/55/86/05/1423770/6f3bc10346f068b85fd5720d3fa2b57f241036ee661c1e578d40d95d65d3dc025e56.gif"/>
+</p>
 <h3 align="center">
 	<a href="#%EF%B8%8F-about">About</a>
 	<span> · </span>
-	<a href="#-index">Month-x</a>
+	<a href="#-month00">Month-x</a>
 	<span> · </span>
 </h3>
 ---
@@ -30,5 +34,5 @@ alx-system_engineering-devops
 
 ---
 
-* [0x00. Shell, navigation](./0x00-shell_basics) : Writing basic bash scripts that perform basic stuff.
+* [0x00.Shell, navigation](./0x00-shell_basics) :cd and mkdir basic bash scripts.
 * [0x01](./0x01-shell_permissions) : Linux permissions.
