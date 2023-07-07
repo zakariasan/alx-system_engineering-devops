@@ -9,19 +9,18 @@ alx-system_engineering-devops
 	For further information about alx africa and its projects, please refer to <a href="https://www.alxafrica.com/"><b>ALx africa</b></a>.
 </p>
 ---
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-
----
-
-<p align="center">
-<img src="https://images.pling.com/img/00/00/55/86/05/1423770/6f3bc10346f068b85fd5720d3fa2b57f241036ee661c1e578d40d95d65d3dc025e56.gif"/>
-</p>
 <h3 align="center">
 	<a href="#%EF%B8%8F-about">About</a>
 	<span> · </span>
 	<a href="#-month00">Month-x</a>
 	<span> · </span>
 </h3>
+
+
+<p align="center">
+<img src="https://images.pling.com/img/00/00/55/86/05/1423770/6f3bc10346f068b85fd5720d3fa2b57f241036ee661c1e578d40d95d65d3dc025e56.gif">
+<img src="https://images.pling.com/img/00/00/55/86/05/1423770/6f3bc10346f068b85fd5720d3fa2b57f241036ee661c1e578d40d95d65d3dc025e56.gif"/>
+</p>
 ---
 
 ## 🗣️ About
@@ -35,4 +34,4 @@ alx-system_engineering-devops
 ---
 
 * [0x00.Shell, navigation](./0x00-shell_basics) :cd and mkdir basic bash scripts.
-* [0x01](./0x01-shell_permissions) : Linux permissions.
+* [0x01. Shell, permissions](./0x01-shell_permissions) :whoami and Linux permissions.
