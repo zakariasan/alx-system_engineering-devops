@@ -18,7 +18,7 @@ alx-system_engineering-devops
 
 
 <p align="center">
-<img src="https://images.pling.com/img/00/00/55/86/05/1423770/6f3bc10346f068b85fd5720d3fa2b57f241036ee661c1e578d40d95d65d3dc025e56.gif">
+<img src="https://img.shields.io/badge/Alx-0052CC?style=for-the-badge">
 <img src="https://images.pling.com/img/00/00/55/86/05/1423770/6f3bc10346f068b85fd5720d3fa2b57f241036ee661c1e578d40d95d65d3dc025e56.gif"/>
 </p>
 ---
