@@ -1,4 +1,18 @@
 # 0x00 Shell Basics
+Learning basics about cd
+ls
+pwd
+less
+file
+ln
+cp
+mv
+rm
+mkdir
+type
+which
+help
+man
 
 ![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/205/image.jpg)
 
