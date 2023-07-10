@@ -1,2 +1,2 @@
 #!/bin/bash
-tr 'Cc' '\0'
+tr -d 'Cc'
