@@ -35,3 +35,4 @@ alx-system_engineering-devops
 
 * [0x00.Shell, navigation](./0x00-shell_basics) :cd and mkdir basic bash scripts.
 * [0x01. Shell, permissions](./0x01-shell_permissions) :whoami and Linux permissions.
+* [0x02. Shell, I/O Redirections and filters](./0x02-shell_redirections) : hands-on exploration of Shell scripting, I/O redirections, and filters, enabling participants to automate tasks, manipulate data, and handle files efficiently.
