@@ -18,11 +18,19 @@ Command line for the win
 ## 🗣️ Steps
 
 > _1. Open your Terminal (Ubuntu) put the Screenshots in Desktop 
+
+
 > _2. navigate to YOur desktop by typing``cd ``
+
+
 > _3. connect to your sandbox via sftp copy sftp in your intranet env past in your terminal ``  sftp e60HashCode@1234CodefromAlx.alx-cod.online ``
 Confirm the pass word
 
+
+
 > _4 in your sandbox navigat to the folder of the project ``cd /root/alx-system_engineering-devops``
+
+
 
 > _5 creat a folder called ``mkdir command_line_for_the_win/``
 
@@ -40,5 +48,10 @@ sftp> put Screenshot\ from\ 9\ to\ \ 18.png .
 Uploading Screenshot from 9 to  18.png to /alx-system_engineering-devops/command_line_for_the_win/./Screenshot from 9 to  18.png
 Screenshot from 9 to  18.png                  100%   91KB  72.6KB/s   00:01
 ```
+
+
 > _ last step is to push all screeshots and Readme 
+
+
+> _ Yuupi you mad it see you in the Next challenge 
 
