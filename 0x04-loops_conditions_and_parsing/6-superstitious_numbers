@@ -8,7 +8,7 @@ while [[ $var -le 20 ]]; do
 		;;
 		9) echo "bad luck from Japan"
 		;;
-		17) echo echo "bad luck from Italy"
+		17) echo "bad luck from Italy"
 		;;
 		*) 
 		;;
