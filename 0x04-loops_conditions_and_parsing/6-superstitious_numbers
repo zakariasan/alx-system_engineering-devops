@@ -3,12 +3,15 @@
 var=1
 while [[ $var -le 20 ]]; do
 	echo "$var"
-	if [[ $var -eq 4 ]]; then
-		echo "bad luck from China"
-	elif [[ $var -eq 9 ]]; then
-		echo "bad luck from Japan"
-	elif [[ $var -eq 17 ]]; then
-		echo "bad luck from Italy"
-	fi
+	case "$var" in
+		4) echo "bad luck from China"
+		;;
+		9) echo "bad luck from Japan"
+		;;
+		17) echo echo "bad luck from Italy"
+		;;
+		*) 
+		;;
+	esac
 	var=$((var + 1))
 done
