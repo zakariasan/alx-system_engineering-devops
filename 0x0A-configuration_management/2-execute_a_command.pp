@@ -5,7 +5,7 @@ exec { 'killmenow':
 }
 
 file { '/path/to/killmenow_script':
-  ensure => present,
-  mode   => '0755',
+  ensure  => present,
+  mode    => '0755',
   content => "#!/bin/bash\nwhile true; do sleep 2; done\n",
 }
