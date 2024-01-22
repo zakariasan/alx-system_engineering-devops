@@ -1,5 +1,6 @@
 #  Bash script that uses ssh to connect to your server using the private key 
 # 100-puppet_ssh_config.pp
+include stdlib
 
 file_line { 'Turn off passwd auth':
   ensure  => 'present',
