@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Update Nginx configuration to listen on port 80
 apt-get update
 apt-get -y install curl
