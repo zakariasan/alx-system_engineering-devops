@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Bash script to display DNS records: record type, IP, subdomains
+#!/usr/bin/env bash
+# Bash script to display DNS records: record type, IP, subdomains
+
+print_dns_record() {
+    local domain="$1"
+    local subdomain="$2"
+
+    printf "The subdomain %s is a " "$subdomain"
+
+    dig_output=$(dig "$subdomain.$domain" +short)
+
+    if [ -n "$dig_output" ]; then
+        record_type=$(echo "$dig_output" | awk '{ print $1 }')
+        destination=$(echo "$dig_output" | awk '{ print $2 }')
+
+        printf "%s record and points to %s\n" "$record_type" "$destination"
+    else
+        echo "No records found for $subdomain.$domain"
+    fi
+}
+
+if [ -z "$1" ]; then
+    echo "Error: Missing domain argument"
+    exit 1
+fi
+
+if [ -z "$2" ]; then
+    for subdomain in "www" "lb-01" "web-01" "web-02"; do
+        print_dns_record "$1" "$subdomain"
+    done
+else
+    print_dns_record "$1" "$2"
+fi
+
