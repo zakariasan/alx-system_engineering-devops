@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 # Bash script that accepts one argument and run whoami cmd under user
-
-# Step 1: Set nginx user in nginx.conf
-sed -i 's/user\s*nginx;/user nginx;/' /etc/nginx/nginx.conf
-
-# Step 2: Update nginx configuration to listen on port 8080 and bind to all active IPs
-sed -i 's/listen\s*80;/listen 8080;/g' /etc/nginx/sites-available/default
-sed -i '/listen\s*\[::\]:80 default_server;/d' /etc/nginx/sites-available/default
-
-# Step 3: Restart Nginx to apply the changes
-service nginx restart
-
+sed -i 's/Listen 8080/#Listen 8080/g' /etc/apache2/ports.conf
+sed -i 's/#user www-data;/user nginx;/g' /etc/nginx/nginx.conf
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+pkill -1 apache2
+chmod ugo+wrx /etc/apache2/ports.conf /etc/nginx/nginx.conf | sudo -u nginx service nginx restart
