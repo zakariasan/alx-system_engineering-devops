@@ -2,8 +2,8 @@
 """ for a given employee ID, returns information about his/her TODO list """
 
 from requests import get
-import sys
 import json
+import sys
 
 
 def get_employee_progress(em_id):
@@ -12,7 +12,6 @@ def get_employee_progress(em_id):
                     .format(em_id)).json()
     emp_progress = get('https://jsonplaceholder.typicode.com/users/{}/todos'
                        .format(em_id)).json()
-
     data = {str(em_id): []}
     for it in emp_progress:
         data[str(em_id)].append({
@@ -22,7 +21,7 @@ def get_employee_progress(em_id):
             })
 
     with open('{}.json'.format(sys.argv[1]), 'w') as f:
-        json.dump(data, f)
+        f.write(json.dumps(data))
 
 
 if __name__ == "__main__":

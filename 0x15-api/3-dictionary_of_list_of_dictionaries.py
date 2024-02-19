@@ -21,7 +21,7 @@ def get_employee_progress():
                     })
         all_data[user['id']] = data
     with open('todo_all_employees.json', 'w') as f:
-        json.dump(all_data, f)
+        json.dump(data, f)
 
 
 if __name__ == "__main__":

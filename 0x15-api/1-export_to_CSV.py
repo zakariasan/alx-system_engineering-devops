@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ for a given employee ID, returns information about his/her TODO list """
 
+import csv
 from requests import get
 import sys
-import csv
 
 
 def get_employee_progress(em_id):
@@ -18,7 +18,7 @@ def get_employee_progress(em_id):
         for it in emp_progress:
             data.writerow([
                 it['userId'],
-                emp_infos['name'],
+                emp_infos['username'],
                 str(it['completed']),
                 it['title']
                 ])
