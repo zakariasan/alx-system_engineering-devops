@@ -21,7 +21,7 @@ file { '/etc/nginx/sites-available/default':
     }
 
     location = /redirect_me {
-        return 301 https://www.youtube.com/@tpauldike;
+        return 301 'https://www.youtube.com/@tpauldike';
     }
 
     location = / {
