@@ -16,13 +16,16 @@ file { '/etc/nginx/sites-available/default':
         try_files \$uri \$uri/ =404;
     }
 
-    error_page 404 /404.html;
     location = /404.html {
         internal;
     }
 
     location = /redirect_me {
         return 301 https://www.youtube.com/@tpauldike;
+    }
+
+    location = / {
+        return 200 'Hello World!';
     }
 }
 ",
@@ -42,4 +45,3 @@ service { 'nginx':
   enable    => true,
   subscribe => File['/etc/nginx/sites-available/default'],
 }
-
