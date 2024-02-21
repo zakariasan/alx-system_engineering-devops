@@ -1,47 +1,38 @@
 #ime to practice configuring your server with Puppet! 
+# Install Nginx package
 package { 'nginx':
-  ensure => installed,
+  provider => 'apt',
 }
 
-file { '/etc/nginx/sites-available/default':
-  ensure  => present,
-  content => "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-    server_name _;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-
-    location = /404.html {
-        internal;
-    }
-
-    location = /redirect_me {
-        return 301 'https://www.youtube.com/watch?v=QH2-TGUlwu4';
-    }
-
-    location = / {
-        return 200 'Hello World!';
-    }
-}
-",
-}
-
-file { '/var/www/html':
-  ensure => directory,
-}
-
-file { '/var/www/html/index.html':
+# Create the main HTML page
+file { '/var/www/html/index.nginx-debian.html':
   ensure  => present,
   content => 'Hello World!',
 }
 
-service { 'nginx':
-  ensure    => running,
-  enable    => true,
-  subscribe => File['/etc/nginx/sites-available/default'],
+# Configure redirection
+file { '/etc/nginx/sites-available/default':
+  ensure  => present,
+  content => "
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    index index.nginx-debian.html;
+
+    location /redirect_me {
+        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+    }
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}",
+}
+
+# Start Nginx service
+exec { 'start_nginx':
+  command => '/usr/sbin/service nginx start',
+  path    => '/usr/bin:/usr/sbin',
+  require => File['/etc/nginx/sites-available/default'],
 }
