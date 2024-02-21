@@ -1,4 +1,3 @@
-# puppet_nginx_config.pp
 package { 'nginx':
   ensure => installed,
 }
