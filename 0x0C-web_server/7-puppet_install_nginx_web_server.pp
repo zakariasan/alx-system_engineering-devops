@@ -1,3 +1,4 @@
+#ime to practice configuring your server with Puppet! 
 package { 'nginx':
   ensure => installed,
 }
