@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import requests
 """ Req reddit api """
+import requests
 
 
 def recurse(subreddit, hot_list=None, after=None):
