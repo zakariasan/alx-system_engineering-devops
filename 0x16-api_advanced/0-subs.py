@@ -18,4 +18,4 @@ def number_of_subscribers(subreddit):
     if response.status_code >= 300:
         return 0
     else:
-        return data['data']['subscribers']
+        return data.get('data').get('subscribers')
