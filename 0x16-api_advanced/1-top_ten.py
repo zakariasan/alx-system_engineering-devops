@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import requests
 """ Req reddit api """
 
 
 def top_ten(subreddit):
     """ Queries the reddit api the top 10"""
+    import requests
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     headers = {'User-Agent': 'My-User-Agent'}
 

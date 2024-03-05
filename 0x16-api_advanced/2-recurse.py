@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-import requests
 """ Req reddit api """
 
 
 def recurse(subreddit, hot_list=None, after=None):
     """ Queries the reddit api the top 10"""
-
+    import requests
     if hot_list is None:
         hot_list = []
 

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ playing with queering """
-import requests
-from collections import Counter
 
 
 def count_words(subreddit, word_list, after=None, word_counts=None):
     """ wrod counts like aois let's play """
+    from collections import Counter
+    import requests
     if word_counts is None:
         word_counts = Counter()
 
