@@ -9,10 +9,13 @@ def number_of_subscribers(subreddit):
     is given, the function should return 0.
     """
     import requests
-    res = requests.get("https://www.reddit.com/r/{}/about.json"
-                       .format(subreddit),
-                       headers={"User-Agent": "My-User-Agent"},
-                       allow_redirects=False)
-    if res.status_code >= 300:
+
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {'User-Agent': 'python:myredditapp:v1.0.0 (by /u/zakaria_H/)'}
+    response = requests.get(url, headers=headers, allow_redirections=False)
+    data = response.json()
+
+    if response.status_code >= 300:
         return 0
-    return res.json().get("data").get("subscribers")
+    else:
+        return data['data']['subscribers']
