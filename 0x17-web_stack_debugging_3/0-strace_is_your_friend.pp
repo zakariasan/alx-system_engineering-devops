@@ -2,7 +2,7 @@
 # Ensure 'php' is used instead of 'phpp' in the wp-settings.php file
 file { '/var/www/html/wp-settings.php':
   ensure  => file,
-  content => file('/path/to/source/wp-settings.php'),
+  content => file('/phpp/php/g/wp-settings.php'),
   replace => true,
 }
 
