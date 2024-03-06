@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Req reddit api function that queries the Reddit API and returns
+"""Module for Req reddit api function that queries the Reddit API and returns
 the number of subscribers"""
 
 

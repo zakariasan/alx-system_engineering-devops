@@ -1,32 +1,36 @@
 #!/usr/bin/python3
-""" Req reddit api and returnrning all hot posts"""
+""" Req reddit api and returnrning all hot posts recuure already apears"""
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
-    """ Queries the reddit api the top 10  Queries the Reddit API recursively
-    to fetch all hot articles"""
+def recurse(subreddit, hot_list=None, after=None):
+    """
+    Queries the Reddit API recursively to fetch all hot articles from a subred.
+    Returns a list containing the titles of all hot articles.
+    If no results are found for the given subreddit, returns None.
+    """
     if hot_list is None:
         hot_list = []
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=100"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    params = {'limit': 100, 'after': after}
     headers = {'User-Agent': 'My-User-Agent'}
-    params = {'after': after} if after else {}
 
     try:
         response = requests.get(url, headers=headers, params=params,
                                 allow_redirects=False)
-        data = response.json()
-        if 'data' in data and 'children' in data['data']:
-            for post in data['data']['children']:
-                hot_list.append(post['data']['title'])
+        response.raise_for_status()
+        data = response.json().get('data', {})
+        children = data.get('children', [])
 
-            if data['data']['after'] is not None:
-                return recurse(subreddit, hot_list, data['data']['after'])
-            else:
-                return hot_list
+        for post in children:
+            hot_list.append(post['data']['title'])
+
+        after = data.get('after')
+        if after:
+            return recurse(subreddit, hot_list, after)
         else:
-            return None
-    except Exception as e:
+            return hot_list if hot_list else None
+    except requests.RequestException as e:
         print("Error:", e)
         return None
