@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Req reddit api """
+""" Req reddit api and returnrning all hot posts"""
 import requests
 
 
-def recurse(subreddit, hot_list=None, after=None):
+def recurse(subreddit, hot_list=[], after=None):
     """ Queries the reddit api the top 10"""
     if hot_list is None:
         hot_list = []
