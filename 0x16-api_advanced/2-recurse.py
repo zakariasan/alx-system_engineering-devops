@@ -4,7 +4,8 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    """ Queries the reddit api the top 10"""
+    """ Queries the reddit api the top 10  Queries the Reddit API recursively
+    to fetch all hot articles"""
     if hot_list is None:
         hot_list = []
 
@@ -13,7 +14,8 @@ def recurse(subreddit, hot_list=[], after=None):
     params = {'after': after} if after else {}
 
     try:
-        response = requests.get(url, headers=headers, params=params)
+        response = requests.get(url, headers=headers, params=params,
+                                allow_redirects=False)
         data = response.json()
         if 'data' in data and 'children' in data['data']:
             for post in data['data']['children']:
