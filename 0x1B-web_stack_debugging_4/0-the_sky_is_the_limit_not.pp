@@ -1,22 +1,20 @@
 # Increases the amount of traffic an Nginx server can handle.
 
-# Define the path to the nginx configuration file
-$nginx_config_file = '/etc/default/nginx'
+# Define ulimit value
+$ulimit_value = 4096
 
-# Increase the ULIMIT in the nginx configuration file
-file_line { 'increase_nginx_ulimit':
-  path    => $nginx_config_file,
-  line    => 'ulimit -n 4096',
-  match   => '^ulimit -n.*',
+# Increase the ULIMIT of the default file
+file { '/etc/default/nginx':
   ensure  => present,
+  content => template('nginx/default.erb'),
   notify  => Exec['nginx-restart'],
 }
 
-# Restart Nginx using systemctl
+# Restart Nginx only if the file changes
 exec { 'nginx-restart':
-  command     => '/bin/systemctl restart nginx',
+  command     => '/etc/init.d/nginx restart',
   refreshonly => true,
-  subscribe   => File_line['increase_nginx_ulimit'],
+  subscribe   => File['/etc/default/nginx'],
+  path        => ['/usr/sbin', '/usr/bin', '/sbin', '/bin'],
   logoutput   => true,
 }
-
