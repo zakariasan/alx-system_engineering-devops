@@ -3,13 +3,14 @@
 #serve web page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo ufw allow install 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
 sudo mkdir -p /var/www/html/ /var/www/error
 sudo chmod -R 755 /var/www
 
-echo "Hello World!" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
-echo "server {
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html > /dev/null
+sudo bash -c 'cat > /etc/nginx/sites-available/default' <<EOF
+server {
     listen 80 default_server;
     listen [::]:80 default_server;
     root   /var/www/html/;
@@ -24,5 +25,7 @@ echo "server {
         root /usr/share/nginx/html/;
         internal;
     }
-}" > /etc/nginx/sites-available/default
+}
+EOF
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
