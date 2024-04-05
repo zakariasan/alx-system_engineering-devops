@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # the port 80 is their 
 
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 service nginx start
 
