@@ -18,8 +18,8 @@ frontend http
 
 backend web-backend
     balance roundrobin
-    server 475557-web-01 18.207.1.233:80 check
-    server 475557-web-02 52.91.135.48:80 check
+    server 481767-web-01 54.242.111.189:80 check
+    server 481767-web-02 100.26.153.59:80 check
 EOF
 
 # Restart HAProxy service
